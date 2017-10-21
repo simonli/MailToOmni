@@ -1,0 +1,13 @@
+﻿{
+  "ID": "D2D2C97B084D411DB88FE0C79D6C2A6H", //插件ID，32位的UUID
+  "ActionKeyword": "t", //插件默认的触发关键字
+  "Name": "MailToOmni", //插件名字
+  "Description": "Send to OmniFocus Maildrop", //插件介绍
+  "Author": "simonli<simonli@live.co>", //作者
+  "Version": "1.0.0", //插件版本，必须是x.x.x的格式
+  "Language": "csharp", //插件语言，目前支持csharp,python
+  "Website": "https://github.com/simonli/MailToOmni", //插件网站或者个人网站
+  "IcoPath": "Images\\icon.png", //插件图标，路径是相对插件根目录的路径
+  "ExecuteFileName": "Wox.Plugin.MailToOmni.dll" //执行文件入口，如果是C#插件则填写DLL路径，如果是pyhton则填写python文件路径
+
+}
