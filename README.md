@@ -1,5 +1,5 @@
 # MailToOmni
-Wox插件, #组件，发送邮件到OmniFocus的MailDrop
+Wox插件, C#组件，发送邮件到OmniFocus的MailDrop
 
 > - 可配置发送邮件服务器，用户名，密码
 
