@@ -50,11 +50,18 @@ namespace Wox.Plugin.MailToOmni
                 string mailUser = appSection.Settings["MailUser"].Value;
                 string mailPassword = appSection.Settings["MailPassword"].Value;
                 smtpClient.Credentials = new System.Net.NetworkCredential(mailUser, mailPassword); //用户名和密码
+                string useSSL = appSection.Settings["UseSSL"].Value;
+                if (!string.IsNullOrEmpty(useSSL))
+                {
+                    if (useSSL.Equals("Y"))
+                    {
+                        smtpClient.EnableSsl = true;
+                    }
+                }
 
                 //发送邮件设置
                 string mailRecipient = appSection.Settings["OmniMailDrop"].Value;
-                MailMessage mailMessage = new MailMessage($"WoxMailToOmni<{mailUser}>", $"OmniMailDrop<{mailRecipient}>"); // 发送人和收件人
-                //mailMessage.Bcc.Add("liq@gasgoo.com");
+                MailMessage mailMessage = new MailMessage($"WoxMailToOmni<{mailUser}>", $"OmniMailDrop<{mailRecipient}>"); // 发送人和收件人               
                 mailMessage.Subject = email.MailSubject; //主题
                 mailMessage.Body = email.MailBody; //内容
                 mailMessage.BodyEncoding = Encoding.UTF8; //正文编码
